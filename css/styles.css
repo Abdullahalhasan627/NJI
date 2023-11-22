@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Cairo:wght@200;300;400;500;600;700;800;900;1000&family=Roboto+Slab:wght@200&family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Work Sans', sans-serif;
+}
+
+:root {
+    --color-main: #5454f0;
+    --color-hover: #2424e9;
+    --color-test: #1d1c1b;
+    --padding-main: 7em;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    height: 100px;
+    padding: 0 var(--padding-main);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 .1px 10px #00000057;
+    background-color: #fff9f9;
+    z-index: 999;
+}
+
+.logo {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+header .title {
+    width: 60px;
+    height: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    transition: ease .4s;
+}
+
+header .title img {
+    max-width: 100%;
+}
+
+header .title:hover {
+    width: 61.44px;
+    box-shadow: 0 0 1px 30px var(--color-test);
+}
+
+header nav {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header nav .navbar {
+    width: 450px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 20px;
+    padding: 0;
+}
+
+header nav .navbar a {
+    position: relative;
+    height: 100%;
+    width: calc(100% / 4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--color-test);
+    font-size: 1.1em;
+    font-weight: 500;
+    text-transform: capitalize;
+    text-decoration: none;
+    text-align: center;
+    transition: ease .5s;
+    /* z-index: 10; */
+}
+
+header nav .navbar a:hover {
+    color: var(--color-hover);
+    /* background-color: #dddddde9; */
+}
+
+header nav .navbar a::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 0;
+    left: 0;
+    bottom: 0;
+    background-color: #ddd;
+    z-index: -1;
+    transition: ease .3s;
+}
+
+header nav .navbar a:nth-of-type(1)::before {
+    content: "";
+    top: 0;
+}
+
+header nav .navbar a:nth-of-type(3)::before {
+    content: "";
+    top: 0;
+}
+
+header nav .navbar a:hover::before {
+    height: 100%;
+}
+
+header .list {
+    /* position: relative; */
+    width: 100%;
+    height: 100%;
+    display: none;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 2.5em;
+    color: var(--color-test);
+}
+
+aside {
+    width: 100%;
+    height: 50vh;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: 1em 0;
+    border: 1px solid #e8e6e6;
+    background-color: #e8e6e6;
+    /* transition: all ease 1s; */
+}
+
+aside .table {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    /* justify-content: center; */
+    /* align-items: center; */
+    margin: 0;
+    text-align: center;
+}
+
+aside .table a {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-main);
+    font-size: 1.13em;
+    font-weight: 500;
+    text-decoration: none;
+    text-transform: capitalize;
+    box-shadow:  0 0 5px 1px rgba(0, 0, 0, 0.082);
+    transition: ease .3s;
+}
+
+
+aside .table a:hover {
+    background-color: #ddd;
+}
+
+
+
+@media (max-width: 900px) {
+    header nav .navbar {
+        width: 400px;
+    }
+    header {
+        padding: 0 4em;
+    }
+}
+
+@media (max-width: 650px) {
+    header {
+        position: static;
+        padding: 0 2em;
+    }
+    header nav .navbar {
+        display: none;
+    }
+    header .list {
+        display: flex;
+    }
+    header .list:hover + aside {
+        display: flex;
+    }
+}
+
+@media (min-width: 650px) {
+    aside {
+        display: none;
+    }
+}
+
+@media (max-width: 300px) {
+    header {
+        padding: 1em;
+    }
+}
+
+
+
+
+
