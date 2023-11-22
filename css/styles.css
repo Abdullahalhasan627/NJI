@@ -219,6 +219,49 @@ aside .table a:hover {
     }
 }
 
+.main {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 var(--padding-main);
+}
+
+
+.main .text {
+    width: 45%;
+    height: 100%;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.main .text h2 {
+
+}
+
+.main .text p {
+
+}
+
+.main .img-home {
+    width: 55%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+.main .img-home img {
+    max-width: 100%;
+}
+
+
 
 
 
