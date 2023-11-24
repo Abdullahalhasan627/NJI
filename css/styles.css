@@ -223,46 +223,143 @@ aside .table a:hover {
     width: 100%;
     height: 100vh;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    padding: 0 var(--padding-main);
+    margin: 0 auto;
+    padding: 0 15px;
 }
 
+@media (max-width: 900px) {
+    .main {
+        flex-direction: column;
+    }
+}
 
 .main .text {
-    width: 45%;
+    display: flex;
+    flex-direction: column;
+    /* align-content: space-between; */
+    /* justify-content: space-between; */
+    gap: 10px;
+}
+
+.main .text {
+    width: 600px;
+}
+
+.main .image {
+    display: flex;
     height: 100%;
-    display: grid;
-    justify-content: center;
-    align-content: center;
+    /* width: max-content; */
+    /* justify-content: center; */
     align-items: center;
-    gap: 15px;
 }
 
-.main .text h2 {
-
+.main .image img {
+    max-width: 100%;
+    height: 50%;
 }
 
-.main .text p {
-
-}
-
-.main .img-home {
-    width: 55%;
-    height: 100%;
+.services {
+    width: 100%;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+}
 
+.services .container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 32%);
+    /* grid-template-rows: repeat(2, 60%); */
+    gap: 3%;
+    padding: 0 var(--padding-main);
+    margin: auto;
 
 }
 
-.main .img-home img {
+.services .container > div {
+    position: relative;
+    /* height: 100%; */
+    /* border: 1px solid black; */
+    box-shadow: 0 0 2.2px 0px black;
+    border-radius: 5px;
+    transition: ease .6s;
+}
+
+.services .container > div:hover {
+    /* opacity: 0.8; */
+}
+
+.services .container > div > .text {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-content: space-between;
+    line-height: 1.28;
+    padding: 5px 10px;
+}
+
+.services .container > div > .text h4 {
+    font-size: 1.2em;
+    font-weight: 600;
+    color: var(--color-test);
+
+}
+
+.services .container > div > .text p {
+    font-size: 1.04em;
+    font-weight: 400;
+    color: var(--color-test);
+
+}
+
+.services .container > div > .read-more {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0 15px;
+}
+
+.services .container > div > .read-more a {
+    text-decoration: none;
+    text-transform: capitalize;
+    font-size: large;
+    font-weight: 400;
+    color: var(--color-main);
+}
+
+.services .container > div > .read-more a:hover {
+    color: var(--color-hover);
+}
+
+.services .container > div > .image img {
+    /* height: 200px; */
     max-width: 100%;
+    transition: ease .3s;
 }
 
+.services .container > div::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: #ddd;
+    transition: ease .5s;
+    z-index: -1;
+}
 
+.services .container > div:hover::before {
+    width: 100%;
+}
 
-
-
-
+.services .container > div > .image img:hover {
+    filter: blur(3px);
+}
